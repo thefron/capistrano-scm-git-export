@@ -1,6 +1,7 @@
-# Capistrano::Scm::Git::Export
+# capistrano-scm-git-export
 
-TODO: Write a gem description
+Adds scm strategy archives your local git for Capistrano 3.x.
+Useful when your deployment environment cannot reach remote git repository.
 
 ## Installation
 
@@ -8,17 +9,14 @@ Add this line to your application's Gemfile:
 
     gem 'capistrano-scm-git-export'
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install capistrano-scm-git-export
-
 ## Usage
 
-TODO: Write usage instructions here
+Set `:scm` as `:git_export`, and `:branch` as you want in `config/deploy.rb` or `config/deploy/ENVIRONMENT`.
+
+```ruby
+  set :scm, :git_export
+  set :branch, 'master'
+```
 
 ## Contributing
 
