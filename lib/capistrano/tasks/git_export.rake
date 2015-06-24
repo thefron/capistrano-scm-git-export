@@ -4,6 +4,7 @@ namespace :git_export do
   desc 'Archive files to #{archive_name}'
   file archive_name do |t|
     sh "git archive #{fetch(:branch)} --format=tar | bzip2 > #{t.name}"
+    set :current_revision, `git rev-parse #{fetch(:branch)}`.chomp
   end
 
   desc 'Deploy #{archive_name} to release_path'
